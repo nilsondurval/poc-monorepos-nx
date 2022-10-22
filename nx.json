@@ -17,5 +17,13 @@
         "accessToken": "MjUzNTg5YWQtZjdkYS00NzM2LWExYTMtNzIwNmU1M2Y0NTVlfHJlYWQtd3JpdGU="
       }
     }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build", "^pack"]
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    }
   }
 }
