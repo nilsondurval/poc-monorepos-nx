@@ -27,6 +27,29 @@ $ mkdir libs
 
 # Setup development enviroment
 
+## building the lib first
+```sh
+// This step is necessary because the apps depends on the lib dist
+$ cd libs/my-lib-workspace
+$ npm install
+$ npm run build
+```
+
+## Installing and building all
+```sh
+// at root level
+$ npm install 
+$ nx run-many --target=build
+```
+
+## Starting
+```sh
+// at root level
+$  nx run-many --target=start
+```
+
+# Useful commands
+
 ## Building
 
 ###  Building of one app/lib
@@ -56,7 +79,7 @@ $ nx start <@my-workspaces-name>/<my-app-name>
 $ nx run-many --target=start
 ```
 
-### Creating a new app
+## Creating a new app
 ```sh
 $ cd apps
 $ ng new <my-app-name>
@@ -64,9 +87,9 @@ $ ng new <my-app-name>
 -- Note: Alter package json as below
 > "name": "<@my-workspaces-name>/<my-app-name>"
 
-### Creating a new lib
+## Creating a new lib
 
-#### Creating cli workspace
+### Creating cli workspace
 ```sh
 $ cd libs
 $ ng new <my-workspace-name> --no-create-application
@@ -75,7 +98,7 @@ $ cd <my-workspace-name>
 -- Note: Alter package json as below
 > "name": "<@my-workspaces-name>/<my-lib-workspace-name>"
 
-#### Generate lib on workspace
+### Generate lib on workspace
 ```sh
 $ ng generate library <my-lib-name>
 ```
